@@ -57,11 +57,11 @@ if __name__ == '__main__':
     # 遍历并打印每个子目录
     for folder in subfolders:
         all_names = collect_homework_data(dir + folder)
-
+        df.loc[folder] = 0
         # 遍历字符串数组，如果第一列的值与数组中的字符串匹配，将第三列设为100
         for s in all_names:
             df.loc[df['姓名'] == s, folder] = 100
 
     # 保存更改到Excel文件
-    df.to_excel('D:/作业打分表3.xlsx', index=False)
+    df.to_excel('D:/作业打分表4.xlsx', index=False)
 
